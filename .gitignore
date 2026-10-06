@@ -1,10 +1,22 @@
 # Ignore docker files
 docker-compose*.yml
 Dockerfile
+.docker-dev-*/
 
 # Ignore IDE and editor specific files
 /.vscode/
 /.idea/
+.vs/
+*.user
+*.suo
+
+# Build and compilation outputs
+bin/
+obj/
+TestResults/
 
 # Environment files
 .env
+
+# Folder
+/.notes/

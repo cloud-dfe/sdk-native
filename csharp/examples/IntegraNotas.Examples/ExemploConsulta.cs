@@ -12,7 +12,10 @@ public static class ExemploConsulta
         {
             using var servico = new IntegraClass(isProduction, token, debug);
 
-            string chave = "CHAVE"; // Substitua pela chave do documento fiscal (44 ou 50 dígitos)
+            // Chave do documento fiscal (44 ou 50 dígitos)
+            // Dica: Para captura contínua de notas, recomenda-se a utilização de Webhooks
+            // em vez de consultas repetitivas (polling) via API.
+            string chave = "35230912345678000195550010000000011234567890";
 
             string resp = await servico.ConsultaAsync(chave);
 

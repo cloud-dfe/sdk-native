@@ -41,9 +41,9 @@ class IntegraClass
     }
 
     /**
-     * Valida a chave de acesso do documento fiscal eletrônico (DFe) ou nota fiscal de serviço eletrônica (NFSe)
+     * Valida se a chave de acesso informada é válida (44 ou 50 dígitos).
      * @param string $chave
-     * @throws \Exception Quando a chave não tiver 44 dígitos para DFe ou 50 dígitos para NFSe
+     * @throws \Exception Quando a chave não for válida
      */
     public static function checkKey($chave)
     {

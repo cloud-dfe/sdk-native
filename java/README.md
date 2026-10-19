@@ -11,7 +11,7 @@ Desenvolvida com foco em **zero dependências externas em runtime**, utilizando 
 - **Zero Dependências em Runtime:** Não requer bibliotecas de terceiros (sem Apache HttpClient, OkHttp, Jackson ou Gson obrigatórios).
 - **Java Moderno (LTS):** Desenvolvida e compatível com **Java 17** e **Java 21**.
 - **Cliente HTTP Nativo:** Utiliza o moderno `java.net.http.HttpClient` com pool de conexões e suporte a timeouts.
-- **Validação Antecipada:** Validação rigorosa de tokens e chaves fiscais (44 dígitos para DFe/NFe/CTe ou 50 dígitos para NFSe) antes de qualquer chamada HTTP.
+- **Validação Antecipada:** Validação rigorosa de tokens e chaves fiscais (44 ou 50 dígitos) antes de qualquer chamada HTTP.
 - **Testes com Servidor Mock Nativo:** Testes unitários com o servidor embutido do JDK (`com.sun.net.httpserver.HttpServer`) e JUnit 5 no escopo de testes.
 
 ---
@@ -78,7 +78,7 @@ try {
 
 ### 3. Consulta de Documento Fiscal (`consulta`)
 
-Valida automaticamente se a chave possui **44 dígitos** (DFe/NFe/CTe) ou **50 dígitos** (NFSe):
+Valida automaticamente se a chave possui formato válido (44 ou 50 dígitos):
 
 ```java
 String chave = "35230912345678000195550010000000011234567890";
@@ -90,6 +90,9 @@ try {
     System.err.println("Erro na consulta: " + e.getMessage());
 }
 ```
+
+> [!TIP]
+> **Captura Contínua de Notas:** Para captura contínua de notas, recomenda-se a utilização de **Webhooks** em vez de consultas repetitivas (*polling*) via API.
 
 ### 4. Cancelamento (`cancela`)
 

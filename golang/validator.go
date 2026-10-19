@@ -8,7 +8,7 @@ import (
 
 var nonDigitsRegex = regexp.MustCompile(`\D`)
 
-// CheckKey valida e limpa a chave de acesso do documento fiscal eletrônico (44 dígitos para DFe ou 50 dígitos para NFSe).
+// CheckKey valida se a chave de acesso informada é válida (44 ou 50 dígitos).
 func CheckKey(chave string) (string, error) {
 	if strings.TrimSpace(chave) == "" {
 		return "", errors.New("a chave deve ter 44 dígitos para DFe ou 50 dígitos para NFSe")

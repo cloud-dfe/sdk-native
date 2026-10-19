@@ -8,7 +8,9 @@ async function main() {
   try {
     const servico = new IntegraClass(isProduction, token, debug);
 
-    // Chave de 44 dígitos (DFe/NFe/CTe) ou 50 dígitos (NFSe)
+    // Chave do documento fiscal (44 ou 50 dígitos)
+    // Dica: Para captura contínua de notas, recomenda-se a utilização de Webhooks
+    // em vez de consultas repetitivas (polling) via API.
     const chave = "35230912345678000195550010000000011234567890";
 
     const resp = await servico.consulta(chave);

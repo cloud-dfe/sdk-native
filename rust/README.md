@@ -10,7 +10,7 @@ Desenvolvida com foco em **simplicidade, performance e baixo consumo de recursos
 
 - **Zero Async Runtime:** Síncrona, direta e extremamente rápida para compilar e executar.
 - **Rust Idiomático:** Tratamento rigoroso de erros com `Result<T, IntegraError>` (sem `panic!`).
-- **Validação Antecipada:** Validação prévia de chaves fiscais (44 dígitos para DFe/NFe/CTe ou 50 dígitos para NFSe).
+- **Validação Antecipada:** Validação prévia de chaves fiscais (44 ou 50 dígitos).
 - **Testes com Servidor Mock Nativo:** Testes unitários com `std::net::TcpListener` da biblioteca padrão do Rust.
 
 ---
@@ -70,7 +70,7 @@ println!("Resposta: {}", resposta);
 
 ### 3. Consulta de Documento Fiscal (`consulta`)
 
-Valida automaticamente se a chave possui **44 dígitos** (DFe/NFe/CTe) ou **50 dígitos** (NFSe):
+Valida automaticamente se a chave possui formato válido (44 ou 50 dígitos):
 
 ```rust
 let chave = "35230912345678000195550010000000011234567890";
@@ -78,6 +78,9 @@ let chave = "35230912345678000195550010000000011234567890";
 let resposta = servico.consulta(Some(chave), None)?;
 println!("Resposta: {}", resposta);
 ```
+
+> [!TIP]
+> **Captura Contínua de Notas:** Para captura contínua de notas, recomenda-se a utilização de **Webhooks** em vez de consultas repetitivas (*polling*) via API.
 
 ### 4. Cancelamento (`cancela`)
 

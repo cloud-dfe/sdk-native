@@ -11,7 +11,7 @@ Desenvolvida com foco em **zero dependências externas (Zero Pip em runtime)**, 
 - **Zero Dependências:** Não requer `requests`, `urllib3` nem qualquer pacote via `pip` em produção.
 - **Python Puro (Standard Library):** Utiliza apenas módulos nativos da linguagem (`urllib`, `json`, `re`).
 - **Compatibilidade Ampla:** Funciona perfeitamente em Python 3.8, 3.9, 3.10, 3.11, 3.12+.
-- **Validação Antecipada:** Validação rigorosa de tokens e chaves de acesso (44 dígitos para DFe/NFe/CTe ou 50 dígitos para NFSe) antes de qualquer requisição.
+- **Validação Antecipada:** Validação rigorosa de tokens e chaves de acesso (44 ou 50 dígitos) antes de qualquer requisição.
 - **Suíte de Testes com Mocks Nativos:** Testes unitários com o framework nativo `unittest`, sem necessidade de bibliotecas de terceiros.
 
 ---
@@ -75,7 +75,7 @@ except Exception as e:
 
 ### 3. Consulta de Documento Fiscal (`consulta`)
 
-Valida automaticamente se a chave possui **44 dígitos** (DFe/NFe/CTe) ou **50 dígitos** (NFSe):
+Valida automaticamente se a chave possui formato válido (44 ou 50 dígitos):
 
 ```python
 chave = "35230912345678000195550010000000011234567890"
@@ -86,6 +86,9 @@ try:
 except Exception as e:
     print(f"Erro na consulta: {e}")
 ```
+
+> [!TIP]
+> **Captura Contínua de Notas:** Para captura contínua de notas, recomenda-se a utilização de **Webhooks** em vez de consultas repetitivas (*polling*) via API.
 
 ### 4. Cancelamento (`cancela`)
 

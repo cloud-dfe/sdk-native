@@ -10,11 +10,11 @@ public final class KeyValidator {
     }
 
     /**
-     * Valida a chave de acesso do documento fiscal eletrônico (DFe) ou nota fiscal de serviço eletrônica (NFSe).
+     * Valida se a chave de acesso informada é válida (44 ou 50 dígitos).
      *
-     * @param chave Chave a ser validada (44 dígitos para DFe/NFe/CTe ou 50 dígitos para NFSe).
+     * @param chave Chave a ser validada.
      * @return Chave limpa contendo apenas dígitos numéricos.
-     * @throws IllegalArgumentException Quando a chave não contiver 44 dígitos para DFe ou 50 dígitos para NFSe.
+     * @throws IllegalArgumentException Quando a chave não for válida.
      */
     public static String checkKey(String chave) {
         if (chave == null || chave.trim().isEmpty()) {

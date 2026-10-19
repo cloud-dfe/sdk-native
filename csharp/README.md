@@ -47,6 +47,9 @@ string resposta = await servico.ConsultaAsync(chave);
 Console.WriteLine(resposta);
 ```
 
+> [!TIP]
+> **Captura Contínua de Notas:** Para captura contínua de notas, recomenda-se a utilização de **Webhooks** em vez de consultas repetitivas (*polling*) via API.
+
 ### 4. Cancelamento (`cancela`)
 
 ```csharp

@@ -6,7 +6,7 @@ namespace IntegraNotas.Validation;
 public static class KeyValidator
 {
     /// <summary>
-    /// Valida e sanitiza a chave de acesso do documento fiscal eletrônico (DFe: 44 dígitos) ou NFSe (50 dígitos).
+    /// Valida se a chave de acesso informada é válida (44 ou 50 dígitos).
     /// </summary>
     /// <param name="chave">Chave de acesso a ser validada.</param>
     /// <returns>A chave contendo apenas dígitos numéricos.</returns>

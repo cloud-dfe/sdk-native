@@ -10,7 +10,7 @@ Desenvolvida com foco em **zero dependências externas**, utilizando estritament
 
 - **Zero Dependências Externas:** Nenhum pacote de terceiros no `go.mod`.
 - **Go Idiomático:** Suporte a `context.Context` em todas as operações, structs fortemente tipadas e tipos de erro customizados.
-- **Validação Antecipada:** Validação rigorosa de tokens e chaves fiscais (44 dígitos para DFe/NFe/CTe ou 50 dígitos para NFSe) antes de qualquer chamada HTTP.
+- **Validação Antecipada:** Validação rigorosa de tokens e chaves fiscais (44 ou 50 dígitos) antes de qualquer chamada HTTP.
 - **Testes com Servidor Mock Nativo:** Testes unitários com o pacote padrão `net/http/httptest`.
 
 ---
@@ -79,7 +79,7 @@ fmt.Println(resposta)
 
 ### 3. Consulta de Documento Fiscal (`Consulta`)
 
-Valida automaticamente se a chave possui **44 dígitos** (DFe/NFe/CTe) ou **50 dígitos** (NFSe):
+Valida automaticamente se a chave possui formato válido (44 ou 50 dígitos):
 
 ```go
 chave := "35230912345678000195550010000000011234567890"
@@ -90,6 +90,9 @@ if err != nil {
 }
 fmt.Println(resposta)
 ```
+
+> [!TIP]
+> **Captura Contínua de Notas:** Para captura contínua de notas, recomenda-se a utilização de **Webhooks** em vez de consultas repetitivas (*polling*) via API.
 
 ### 4. Cancelamento (`Cancela`)
 

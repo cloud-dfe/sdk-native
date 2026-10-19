@@ -3,7 +3,7 @@ use crate::error::IntegraError;
 pub struct KeyValidator;
 
 impl KeyValidator {
-    /// Valida e higieniza a chave de acesso do documento fiscal eletrônico (44 dígitos para DFe ou 50 dígitos para NFSe).
+    /// Valida se a chave de acesso informada é válida (44 ou 50 dígitos).
     pub fn check_key(chave: &str) -> Result<String, IntegraError> {
         if chave.trim().is_empty() {
             return Err(IntegraError {

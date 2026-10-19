@@ -9,7 +9,10 @@ $debug = true;  // Se true, inclui detalhes da requisição caso ocorra erro
 try {
     $servico = new IntegraClass($isProduction, $token, $debug);
 
-    $chave = "CHAVE"; // Substitua pela chave do documento fiscal
+    // Chave do documento fiscal (44 ou 50 dígitos)
+    // Dica: Para captura contínua de notas, recomenda-se a utilização de Webhooks
+    // em vez de consultas repetitivas (polling) via API.
+    $chave = "35230912345678000195550010000000011234567890";
 
     $resp = $servico->consulta($chave);
 

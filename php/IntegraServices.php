@@ -35,7 +35,7 @@ class IntegraServices
      * @param int $httpCode
      * @return array|null
      */
-    private static function getErrors($response, $curlError, $httpCode)
+    public static function getErrors($response, $curlError, $httpCode)
     {
         if ($response === false) {
             return array(

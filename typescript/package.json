@@ -1,0 +1,29 @@
+{
+  "name": "integranotas-sdk",
+  "version": "1.0.0",
+  "description": "SDK nativa em TypeScript para integração com a API IntegraNotas",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "example:cria": "tsx examples/cria.ts",
+    "example:consulta": "tsx examples/consulta.ts",
+    "example:cancela": "tsx examples/cancela.ts",
+    "example:preview": "tsx examples/preview.ts"
+  },
+  "keywords": [
+    "integranotas",
+    "nfe",
+    "nfse",
+    "cte",
+    "sdk"
+  ],
+  "author": "IntegraNotas",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

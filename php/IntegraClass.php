@@ -45,7 +45,7 @@ class IntegraClass
      * @param string $chave
      * @throws \Exception Quando a chave não tiver 44 dígitos para DFe ou 50 dígitos para NFSe
      */
-    private static function checkKey($chave)
+    public static function checkKey($chave)
     {
         $key = preg_replace("/[^0-9]/", "", (string) $chave);
         $len = strlen($key);

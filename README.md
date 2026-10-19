@@ -12,6 +12,7 @@ Repositório contendo implementações nativas e puras da SDK de integração co
 | **C#** | .NET 8 LTS | Idiomático, assíncrono (TAP), alta performance com `System.Text.Json` | [Ver Documentação C#](./csharp/README.md) |
 | **TypeScript** | Node.js 18+ / Edge | 100% Nativo, **Zero Dependências**, baseado na Fetch API padrão | [Ver Documentação TypeScript](./typescript/README.md) |
 | **Python** | Python 3.8+ | 100% Nativo, **Zero Pip**, baseado na biblioteca padrão (`urllib`) | [Ver Documentação Python](./python/README.md) |
+| **Go (Golang)** | Go 1.22+ | 100% Nativo, **Zero Dependências**, baseado em `net/http` e `context` | [Ver Documentação Go](./golang/README.md) |
 
 ---
 
@@ -37,6 +38,11 @@ docker compose -f .docker-dev-typescript/docker-compose.yml run --rm sdk-typescr
 ### 🐍 Testes Python:
 ```bash
 docker compose -f .docker-dev-python/docker-compose.yml run --rm sdk-python
+```
+
+### 🐹 Testes Go (Golang):
+```bash
+docker compose -f .docker-dev-golang/docker-compose.yml run --rm sdk-golang
 ```
 
 ---

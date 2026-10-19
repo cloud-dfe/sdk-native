@@ -18,6 +18,8 @@ node_modules/
 dist/
 __pycache__/
 *.pyc
+target/
+*.class
 
 # Environment files
 .env

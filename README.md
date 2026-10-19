@@ -18,6 +18,22 @@ Repositório contendo implementações nativas e puras da SDK de integração co
 
 ---
 
+## 📁 Pacotes para Download (Drop-in / Copiar e Colar)
+
+Caso precise apenas do **código-fonte limpo de produção** para copiar e colar diretamente no projeto da sua empresa ou cliente (sem arquivos de teste, Docker ou scripts auxiliares), utilize os pacotes compactados disponíveis na pasta [`packages/`](./packages/README.md):
+
+- [PHP (`integranotas-php.zip`)](./packages/integranotas-php.zip)
+- [C# (`integranotas-csharp.zip`)](./packages/integranotas-csharp.zip)
+- [TypeScript (`integranotas-typescript.zip`)](./packages/integranotas-typescript.zip)
+- [Python (`integranotas-python.zip`)](./packages/integranotas-python.zip)
+- [Go / Golang (`integranotas-golang.zip`)](./packages/integranotas-golang.zip)
+- [Java (`integranotas-java.zip`)](./packages/integranotas-java.zip)
+- [Rust (`integranotas-rust.zip`)](./packages/integranotas-rust.zip)
+
+> Para regenerar ou atualizar todos os pacotes: `python3 scripts/build_packages.py`
+
+---
+
 ## 🚀 Execução Rápida com Docker
 
 Cada linguagem possui seu ambiente de desenvolvimento e testes completamente isolado em pastas `.docker-dev-<linguagem>/`:

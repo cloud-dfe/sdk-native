@@ -14,6 +14,7 @@ Repositório contendo implementações nativas e puras da SDK de integração co
 | **Python** | Python 3.8+ | 100% Nativo, **Zero Pip**, baseado na biblioteca padrão (`urllib`) | [Ver Documentação Python](./python/README.md) |
 | **Go (Golang)** | Go 1.22+ | 100% Nativo, **Zero Dependências**, baseado em `net/http` e `context` | [Ver Documentação Go](./golang/README.md) |
 | **Java** | Java 17+ / 21 LTS | 100% Nativo, **Zero Dependências**, baseado em `java.net.http.HttpClient` | [Ver Documentação Java](./java/README.md) |
+| **Rust** | Rust 1.70+ | Minimalista, síncrono e leve com `ureq` (sem Tokio ou runtime assíncrono) | [Ver Documentação Rust](./rust/README.md) |
 
 ---
 
@@ -49,6 +50,11 @@ docker compose -f .docker-dev-golang/docker-compose.yml run --rm sdk-golang
 ### ☕ Testes Java:
 ```bash
 docker compose -f .docker-dev-java/docker-compose.yml run --rm sdk-java
+```
+
+### 🦀 Testes Rust:
+```bash
+docker compose -f .docker-dev-rust/docker-compose.yml run --rm sdk-rust
 ```
 
 ---

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "integranotas-sdk"
+version = "1.0.0"
+description = "SDK nativa em Python para integração com a API da IntegraNotas"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "IntegraNotas" }
+]
+keywords = ["integranotas", "nfe", "nfse", "cte", "sdk"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["integranotas*"]

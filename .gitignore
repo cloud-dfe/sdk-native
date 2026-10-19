@@ -16,6 +16,8 @@ obj/
 TestResults/
 node_modules/
 dist/
+__pycache__/
+*.pyc
 
 # Environment files
 .env

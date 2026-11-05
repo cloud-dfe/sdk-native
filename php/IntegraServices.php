@@ -138,15 +138,18 @@ class IntegraServices
         $responseData = json_decode($response);
 
         if ($this->debug) {
-            $responseData = array(
-                $responseData,
-                "debug" => array(
-                    "method" => $method,
-                    "url" => $url,
-                    "body" => $body,
-                    "headers" => $headers
-                )
+            $debugData = array(
+                "method" => $method,
+                "url" => $url,
+                "body" => $body,
+                "headers" => $headers
             );
+
+            if (is_object($responseData)) {
+                $responseData->debug = $debugData;
+            } elseif (is_array($responseData)) {
+                $responseData["debug"] = $debugData;
+            }
         }
 
         return $responseData;

@@ -199,6 +199,10 @@ func (s *IntegraServices) Request(
 	}
 
 	if s.Debug {
+		if parsedMap, ok := parsed.(map[string]any); ok {
+			parsedMap["debug"] = debugInfo
+			return parsedMap, nil
+		}
 		return map[string]any{
 			"data":  parsed,
 			"debug": debugInfo,

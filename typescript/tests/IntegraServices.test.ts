@@ -66,7 +66,7 @@ describe("IntegraServices", () => {
     assert.ok(resultado.debug);
     assert.equal(resultado.debug.method, "POST");
     assert.equal(resultado.debug.url, "https://hom-api.integranotas.com.br/v1/servico");
-    assert.deepEqual(resultado.data, { status: "sucesso" });
+    assert.equal(resultado.status, "sucesso");
   });
 
   it("deve lançar IntegraException quando resposta for vazia", async () => {

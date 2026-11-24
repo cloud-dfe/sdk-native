@@ -217,6 +217,9 @@ class IntegraServices:
             ) from err
 
         if self.debug:
+            if isinstance(parsed_data, dict):
+                parsed_data["debug"] = debug_details
+                return parsed_data
             return {
                 "data": parsed_data,
                 "debug": debug_details,

@@ -248,6 +248,21 @@ public class IntegraServices : IDisposable
         if (Debug)
         {
             using var parsedDoc = JsonDocument.Parse(responseContent);
+            if (parsedDoc.RootElement.ValueKind == JsonValueKind.Object)
+            {
+                var dict = new Dictionary<string, object?>();
+                foreach (var prop in parsedDoc.RootElement.EnumerateObject())
+                {
+                    dict[prop.Name] = prop.Value.Clone();
+                }
+                dict["debug"] = BuildDebugData(method, fullUrl, body, headers);
+                return JsonSerializer.Serialize(dict, new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                });
+            }
+
             var debugWrapper = new Dictionary<string, object?>
             {
                 ["data"] = parsedDoc.RootElement.Clone(),

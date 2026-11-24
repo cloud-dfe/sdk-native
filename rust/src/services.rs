@@ -136,10 +136,20 @@ impl IntegraServices {
                 };
 
                 if self.debug {
-                    Ok(serde_json::json!({
-                        "data": parsed,
-                        "debug": debug_info
-                    }))
+                    if let serde_json::Value::Object(mut map) = parsed {
+                        if let Some(d) = debug_info {
+                            map.insert(
+                                "debug".to_string(),
+                                serde_json::to_value(d).unwrap_or(serde_json::Value::Null),
+                            );
+                        }
+                        Ok(serde_json::Value::Object(map))
+                    } else {
+                        Ok(serde_json::json!({
+                            "data": parsed,
+                            "debug": debug_info
+                        }))
+                    }
                 } else {
                     Ok(parsed)
                 }

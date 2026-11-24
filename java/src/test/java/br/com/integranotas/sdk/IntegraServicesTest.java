@@ -110,7 +110,7 @@ class IntegraServicesTest {
 
         String response = services.request("POST", "/servico", Map.of("teste", true), null, null);
 
-        assertTrue(response.contains("\"data\":"));
+        assertTrue(response.contains("\"sucesso\":true"));
         assertTrue(response.contains("\"debug\":"));
         assertTrue(response.contains("\"url\":"));
     }

@@ -65,10 +65,9 @@ class TestIntegraServices(unittest.TestCase):
         resultado = services.request("POST", "/servico", body={"nome": "nota"})
 
         self.assertIn("debug", resultado)
-        self.assertIn("data", resultado)
+        self.assertEqual(resultado["status"], "sucesso")
         self.assertEqual(resultado["debug"]["method"], "POST")
         self.assertEqual(resultado["debug"]["url"], "https://hom-api.integranotas.com.br/v1/servico")
-        self.assertEqual(resultado["data"], {"status": "sucesso"})
 
     @patch("urllib.request.urlopen")
     def test_resposta_vazia_lanca_integra_exception(self, mock_urlopen):

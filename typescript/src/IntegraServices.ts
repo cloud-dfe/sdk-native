@@ -187,6 +187,12 @@ export class IntegraServices {
     }
 
     if (this.debug) {
+      if (parsedData && typeof parsedData === "object" && !Array.isArray(parsedData)) {
+        return {
+          ...parsedData,
+          debug: debugDetails
+        } as unknown as T;
+      }
       return {
         data: parsedData,
         debug: debugDetails

@@ -178,6 +178,13 @@ public class IntegraServices {
         }
 
         if (this.debug) {
+            String trimmed = responseBody.trim();
+            if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
+                if (trimmed.length() == 2) {
+                    return "{\"debug\":" + debugInfo + "}";
+                }
+                return trimmed.substring(0, trimmed.length() - 1) + ",\"debug\":" + debugInfo + "}";
+            }
             return "{\"data\":" + responseBody + ",\"debug\":" + debugInfo + "}";
         }
 

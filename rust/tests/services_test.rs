@@ -89,9 +89,9 @@ fn test_modo_debug() {
         .request("POST", "/servico", None, None, None)
         .expect("esperava sucesso no modo debug");
 
-    assert!(resp.get("data").is_some());
+    assert!(resp.get("sucesso").is_some());
     assert!(resp.get("debug").is_some());
-    assert_eq!(resp["data"]["sucesso"], true);
+    assert_eq!(resp["sucesso"], true);
 }
 
 #[test]

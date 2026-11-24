@@ -107,8 +107,8 @@ func TestIntegraServices_ModoDebug(t *testing.T) {
 		t.Fatalf("esperava map[string]any no modo debug, obteve %T", resp)
 	}
 
-	if debugWrapper["debug"] == nil || debugWrapper["data"] == nil {
-		t.Errorf("esperava campos debug e data, obteve: %v", debugWrapper)
+	if debugWrapper["debug"] == nil || debugWrapper["ok"] != true {
+		t.Errorf("esperava campos debug e ok na raiz, obteve: %v", debugWrapper)
 	}
 }
 

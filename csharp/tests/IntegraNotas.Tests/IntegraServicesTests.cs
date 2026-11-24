@@ -91,6 +91,6 @@ public class IntegraServicesTests
 
         Assert.Contains("\"debug\"", resultado);
         Assert.Contains("\"method\": \"POST\"", resultado);
-        Assert.Contains("\"data\"", resultado);
+        Assert.Contains("\"sucesso\": true", resultado);
     }
 }
